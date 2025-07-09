@@ -1,21 +1,23 @@
 {
-  "name": "split-borwser",
-  "main": "main.js",
+  "name": "splitsurf",
+  "version": "1.0.0",
+  "main": "src/main.js",
   "author": {
     "name": "MiQ",
-    "email": "hey@Miq.dad",
+    "email": "hey@miq.dad",
     "url": "https://miq.dad"
   },
-  "homepage": "https://miq.dad/projects/split-browser",
-  "version": "1.0.0",
+  "homepage": "https://github.com/miqdadalik/split-surf",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
   "build": {
-    "appId": "com.miqdad.splitbrowser",
-    "productName": "SplitBrowser",
+    "appId": "miq.dad.splitsurf",
+    "productName": "Split Surf",
+    "executableName": "splitsurf",
+    "icon": "assets/icons/icon.png",
     "files": [
       "**/*",
       "node_modules/**/*"
@@ -25,14 +27,28 @@
         "deb",
         "AppImage"
       ],
-      "icon": "icon.png",
+      "icon": "assets/icons/icon.png",
       "category": "Utility"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icons/icon.png"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icons/icon.png",
+      "category": "public.app-category.utilities"
     }
   },
   "dependencies": {
     "@electron/remote": "^2.1.2"
   },
   "devDependencies": {
+    "electron": "^37.2.0",
     "electron-builder": "^26.0.12"
   }
 }
