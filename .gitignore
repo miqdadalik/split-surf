@@ -1,0 +1,50 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Electron Builder output
+/dist
+/build
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+*.log
+
+# Optional cache folders
+.cache/
+out/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Electron specific
+*.asar
+
+# Linux packaging
+*.deb
+*.AppImage
+*.snap
+*.rpm
+
+# Windows packaging
+*.exe
+*.msi
+
+# macOS packaging
+*.dmg
+*.pkg
+
+# Runtime data
+*.pid

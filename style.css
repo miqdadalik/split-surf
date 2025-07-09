@@ -1,0 +1,135 @@
+/* Reset full height for core layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main container */
+#container {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Split wrapper (for splitPane containers) */
+.split {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Individual pane */
+.pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  min-width: 200px;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+/* Top bar with URL input and buttons */
+.url-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  flex-wrap: wrap;
+}
+
+/* Input and controls */
+.url-bar .form-control {
+  min-width: 0;
+}
+
+/* Webview stretch */
+webview {
+  flex: 1 1 0%;
+  border: none;
+  min-height: 0;
+}
+
+/* Progress bar stretch fix */
+.progress {
+  flex-shrink: 0;
+  height: 3px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Bookmark dropdown */
+.position-absolute.bg-white {
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 0.25rem;
+  z-index: 10;
+}
+
+/* Resizable gutter styles */
+.gutter {
+  background-color: #dee2e6;
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.gutter.gutter-horizontal {
+  width: 6px;
+  cursor: col-resize;
+  height: 100%;
+}
+
+.gutter.gutter-vertical {
+  height: 6px;
+  cursor: row-resize;
+  width: 100%;
+}
+
+/* Split children must behave */
+.split > .pane {
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.pane > * {
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Optional: tab bar styling */
+#tab-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tab {
+  padding: 0.25rem 0.75rem;
+  background: #f1f1f1;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tab.active {
+  background: #ffffff;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
